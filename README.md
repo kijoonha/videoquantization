@@ -24,18 +24,19 @@
     checkpoints/swin_base_patch244_window1677_sthv2.pth 4 swin_base data/sthv2/videos --eval top_k_accuracy --quant --ptf --lis --quant-
     method minmax --calib-iter=1000
     
- ## 3) GSDS 대학원 서버 
-   sbatch tools/sbatch_test_quant.sh
+## 3) GSDS 대학원 서버 
+     sbatch tools/sbatch_test_quant.sh
 
 # 5. Quantization 적용 파일 경로(모델수정시 수정해야하는 파일)
+
 ## 1) calibration, distributed inference 
     videoquantization/Video-Swin-Transformer/tools/test_quant.py
 ## 2) model backbone
     videoquantization/Video-Swin-Transformer/tools/mmaction/mmaction/models/backbones/swin_transformer.py
 
 # 6. 실험 configuration 파일
+
 ## 1) quantization, experiment 관련
     videoquantization/Video-Swin-Transformer/tools/mmcv/utils/config2.py
 ## 2) swin video model 관련
     videoquantization/Video-Swin-Transformer/configs/recognition/swin/swin_base_patch244_window1677_sthv2_quant.py
-
